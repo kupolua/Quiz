@@ -8,7 +8,7 @@ import java.util.List;
 public class Quiz {
     public static void main(String[] args) {
 
-        //todo Quiz.main() не должен содержать никакой логики. просто execute или runTest, etc
+        //todo  - Quiz.main() не должен содержать никакой логики. просто execute или runTest, etc
         QuizCreator quizCreator = new QuizCreator();
         List<QuizQuestion> quizQuestions = quizCreator.quizGetQuestions();
 
