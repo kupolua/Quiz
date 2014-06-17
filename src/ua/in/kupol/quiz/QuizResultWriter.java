@@ -1,4 +1,4 @@
-package ua.in.kupol.quizjson;
+package ua.in.kupol.quiz;
 
 import java.io.BufferedWriter;
 import java.io.File;

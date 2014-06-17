@@ -1,4 +1,4 @@
-package ua.in.kupol.quizjson;
+package ua.in.kupol.quiz;
 
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
