@@ -10,7 +10,7 @@ public class Quiz {
 
         //todo  - Quiz.main() не должен содержать никакой логики. просто execute или runTest, etc
         QuizCreator quizCreator = new QuizCreator();
-        List<QuizQuestion> quizQuestions = quizCreator.quizGetQuestions();
+        List<QuizQuestion> quizQuestions = quizCreator.quizGetQuestions(); //todo Quiz.main() не должен содержать никакой логики. просто execute или runTest, etc
 
         QuizPassing quizPassing = new QuizPassing();
         List<QuizQuestion> quizAnswers = quizPassing.quizPassing(quizQuestions);
