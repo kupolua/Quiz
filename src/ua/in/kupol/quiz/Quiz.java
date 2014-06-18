@@ -1,10 +1,14 @@
 package ua.in.kupol.quiz;
 
+import ua.in.kupol.quiz.logic.QuizCreator;
+
 /**
- * Created by Pavel on 18.06.2014.
+ * Created by pavelkulakovsky on 16.06.14.
  */
 public class Quiz {
     public static void main(String[] args) {
 
+        QuizCreator quizCreator = new QuizCreator();
+        quizCreator.quizCreate();
     }
 }
