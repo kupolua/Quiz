@@ -10,6 +10,7 @@ import java.util.List;
 public class QuizVerifier {
 
     public List quizVerify(List<QuizQuestion> quizUserAnswers){
+
         String answerRegex = "";
         QuizProperties quizProperties = new QuizProperties();
         List<QuizQuestion> quizVerifiableAnswers = quizUserAnswers;

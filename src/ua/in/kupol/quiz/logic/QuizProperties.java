@@ -11,6 +11,7 @@ import java.util.Properties;
  */
 public class QuizProperties {
     Properties quizProperties = new Properties();
+    public static final String PROPERTIES_FILE  = "config.properties";
     
     public QuizProperties(){
 
@@ -18,10 +19,9 @@ public class QuizProperties {
 
         try {
 
-            String filename = "config.properties";
-            input = Quiz.class.getClassLoader().getResourceAsStream(filename);
+            input = Quiz.class.getClassLoader().getResourceAsStream(PROPERTIES_FILE);
             if(input==null){
-                System.out.println("Sorry, unable to find " + filename);
+                System.out.println("Sorry, unable to find " + PROPERTIES_FILE);
             }
             quizProperties.load(input);
         } catch (IOException ex) {

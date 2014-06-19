@@ -31,8 +31,8 @@ public class QuizGetHead {
             if(quizHeadFile!=null){
                 try {
                     quizHeadFile.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                } catch (IOException eQuizHeadFile) {
+                    eQuizHeadFile.printStackTrace();
                 }
             }
         }
