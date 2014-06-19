@@ -10,5 +10,6 @@ public class Quiz {
 
         QuizCreator quizCreator = new QuizCreator();
         quizCreator.quizCreate();
+
     }
 }

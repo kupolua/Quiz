@@ -1,7 +1,5 @@
 package ua.in.kupol.quiz.model;
 
-import ua.in.kupol.quiz.logic.QuizTypeQuesrion;
-
 /**
  * Created by pavelkulakovsky on 16.06.14.
  */

@@ -1,14 +1,7 @@
 package ua.in.kupol.quiz.logic;
 
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.type.TypeReference;
 import ua.in.kupol.quiz.model.QuizQuestion;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -21,9 +14,10 @@ public class QuizCreator {
 
         QuizGetHead quizGetHead = new QuizGetHead();
 
-        List<QuizQuestion> quizQuestions = quizGetQuestions();
-        QuizExecutor quizExecutor = new QuizExecutor();
+        QuizGetQuestions quizGetQuestions = new QuizGetQuestions();
+        List<QuizQuestion> quizQuestions = quizGetQuestions.quizGetQuestions();
 
+        QuizExecutor quizExecutor = new QuizExecutor();
         List<QuizQuestion> quizUserAnswers = quizExecutor.quizExecut(quizGetHead.quizGetPrintHead(), quizQuestions);
 
         QuizVerifier quizVerifier = new QuizVerifier();
@@ -34,20 +28,4 @@ public class QuizCreator {
 
     }
 
-    public List quizGetQuestions(){
-        QuizResultWriter quizResultWriter = new QuizResultWriter();
-        quizResultWriter.quizInfoRemover();
-        QuizProperties quizProperties = new QuizProperties();
-
-        List<QuizQuestion> quizQuestionsObjects = Collections.emptyList();
-        try {
-            File quizQuestion = new File(quizProperties.quizProperties("questionLocation"));
-            BufferedReader quizQuestionsFile = new BufferedReader(new FileReader(quizQuestion));
-            ObjectMapper mapper = new ObjectMapper();
-            quizQuestionsObjects = mapper.readValue(quizQuestionsFile, new TypeReference<List<QuizQuestion>>(){});
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return quizQuestionsObjects;
-    }
 }
