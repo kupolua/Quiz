@@ -17,14 +17,24 @@ public class QuizGetHead {
         quizResultWriter.quizInfoRemover();
         QuizProperties quizProperties = new QuizProperties();
 
+        BufferedReader quizHeadFile = null;
+
         QuizHead quizHeadObjects = null;
         try {
-            File quizQuestion = new File(quizProperties.quizProperties("headLocation"));
-            BufferedReader quizQuestionsFile = new BufferedReader(new FileReader(quizQuestion));
+            File quizQuestion = new File(quizProperties.getHeadLocation());
+            quizHeadFile = new BufferedReader(new FileReader(quizQuestion));
             ObjectMapper mapper = new ObjectMapper();
-            quizHeadObjects = mapper.readValue(quizQuestionsFile, QuizHead.class);
+            quizHeadObjects = mapper.readValue(quizHeadFile, QuizHead.class);
         } catch (IOException e) {
             e.printStackTrace();
+        } finally{
+            if(quizHeadFile!=null){
+                try {
+                    quizHeadFile.close();
+                } catch (IOException eQuizHeadFile) {
+                    eQuizHeadFile.printStackTrace();
+                }
+            }
         }
         return quizHeadObjects;
     }

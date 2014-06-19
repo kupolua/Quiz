@@ -10,17 +10,18 @@ import java.util.Properties;
  * Created by pavelkulakovsky on 16.06.14.
  */
 public class QuizProperties {
-    public String quizProperties(String request){
-        Properties quizProperties = new Properties();
+    Properties quizProperties = new Properties();
+    public static final String PROPERTIES_FILE  = "config.properties";
+    
+    public QuizProperties(){
+
         InputStream input = null;
 
         try {
 
-            String filename = "config.properties";
-            input = Quiz.class.getClassLoader().getResourceAsStream(filename);
+            input = Quiz.class.getClassLoader().getResourceAsStream(PROPERTIES_FILE);
             if(input==null){
-                System.out.println("Sorry, unable to find " + filename);
-                return null;
+                System.out.println("Sorry, unable to find " + PROPERTIES_FILE);
             }
             quizProperties.load(input);
         } catch (IOException ex) {
@@ -34,23 +35,21 @@ public class QuizProperties {
                 }
             }
         }
-        if (request.equals("headLocation")){
-            return quizProperties.getProperty("pathToHeadFile") + quizProperties.getProperty("quizHeadFile");
-        }
-        if (request.equals("questionLocation")){
-            return quizProperties.getProperty("pathToQuestionsFile") + quizProperties.getProperty("questionsFile");
-        }
-        if (request.equals("fileWriteLocation")){
-            return quizProperties.getProperty("pathToUserResultFile") + quizProperties.getProperty("userResultFile");
-        }
-        if (request.equals("regexMask")) {
-            return quizProperties.getProperty("regexMask");
-        }
-
-        else {
-            return "";
-        }
-
     }
+    public String getHeadLocation() {
+        return quizProperties.getProperty("pathToHeadFile")
+                + quizProperties.getProperty("quizHeadFile");
+    }
+    public String getQuestionLocation() {
+        return quizProperties.getProperty("pathToQuestionsFile") + quizProperties.getProperty("questionsFile");
+    }
+    public String getFileWriteLocation() {
+        return quizProperties.getProperty("pathToUserResultFile") + quizProperties.getProperty("userResultFile");
+    }
+    public String getRegexMask() {
+        return quizProperties.getProperty("regexMask");
+    }
+
+
 
 }

@@ -10,12 +10,13 @@ import java.util.List;
 public class QuizVerifier {
 
     public List quizVerify(List<QuizQuestion> quizUserAnswers){
+
         String answerRegex = "";
         QuizProperties quizProperties = new QuizProperties();
         List<QuizQuestion> quizVerifiableAnswers = quizUserAnswers;
 
         for(QuizQuestion quiz: quizVerifiableAnswers) {
-            answerRegex = quiz.answer.replaceAll(quizProperties.quizProperties("regexMask"), "");
+            answerRegex = quiz.answer.replaceAll(quizProperties.getRegexMask(), "");
             switch (quiz.typeQuestion) {
                 case YESORNO:
                     quiz.isPassed = oneChoice(answerRegex, quiz.key);

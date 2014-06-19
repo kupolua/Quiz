@@ -14,7 +14,7 @@ public class QuizResultWriter {
     public String quizInfoWrite (String infoToWrite) {
         try {
 
-            File file = new File(quizProperties.quizProperties("fileWriteLocation"));
+            File file = new File(quizProperties.getFileWriteLocation());
 
             if (!file.exists()) {
                 file.createNewFile();
@@ -31,7 +31,7 @@ public class QuizResultWriter {
         return infoToWrite;
     }
     public void quizInfoRemover(){
-        File file = new File(quizProperties.quizProperties("fileWriteLocation"));
+        File file = new File(quizProperties.getFileWriteLocation());
         file.delete();
     }
 

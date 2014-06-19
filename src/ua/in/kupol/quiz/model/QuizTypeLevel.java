@@ -1,4 +1,4 @@
-package ua.in.kupol.quiz.logic;
+package ua.in.kupol.quiz.model;
 
 /**
  * Created by pavelkulakovsky on 17.06.14.
