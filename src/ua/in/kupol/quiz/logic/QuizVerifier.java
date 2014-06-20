@@ -16,8 +16,8 @@ public class QuizVerifier {
         List<QuizQuestion> quizVerifiableAnswers = quizUserAnswers;
 
         for(QuizQuestion quiz: quizUserAnswers) {
-            answerRegex = quiz.answer.replaceAll(quizProperties.getRegexMask(), "");
-            quiz.isPassed = quiz.typeQuestion.compareAnswerAndKey(answerRegex, quiz.key);
+            answerRegex = quiz.getAnswer().replaceAll(quizProperties.getRegexMask(), "");
+            quiz.setPassed(quiz.getTypeQuestion().compareAnswerAndKey(answerRegex, quiz.getKey()));
         }
         return quizVerifiableAnswers;
     }
