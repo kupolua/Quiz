@@ -5,7 +5,7 @@ package ua.in.kupol.quiz.model;
  */
 public class QuizQuestion {
 
-    public String question;
+    private String question;
     public QuizTypeQuesrion typeQuestion;
     public String choice;
     public String answer; //20.	не понятно зачем answer и key одновремено
@@ -15,4 +15,11 @@ public class QuizQuestion {
     public int rating;
     public String notify;
 
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
 }

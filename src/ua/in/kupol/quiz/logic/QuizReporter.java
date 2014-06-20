@@ -75,7 +75,7 @@ public class QuizReporter {
     private String quizPrintMiddleLevel(QuizQuestion quiz) {
         String quizPrintMiddleLevel = "";
             quizPrintMiddleLevel += quizPrintHardLevel()
-                    + "\nВы не верно ответили на вопрос: " + quiz.question
+                    + "\nВы не верно ответили на вопрос: " + quiz.guestion
                     + "\nВарианты ответа: " + quiz.choice
                     + "\nВаш ответ: " + quiz.answer;
         return  quizPrintMiddleLevel;

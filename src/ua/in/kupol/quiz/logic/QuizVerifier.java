@@ -19,10 +19,10 @@ public class QuizVerifier {
             answerRegex = quiz.answer.replaceAll(quizProperties.getRegexMask(), "");
             switch (quiz.typeQuestion) {
                 case YESORNO:
-                    quiz.isPassed = oneChoice(answerRegex, quiz.key);
+                    quiz.isPassed = isSingleAnswerChoice(answerRegex, quiz.key);
                     break;
                 case ONERIGHTANSWER:
-                    quiz.isPassed = oneChoice(answerRegex, quiz.key);
+                    quiz.isPassed = isSingleAnswerChoice(answerRegex, quiz.key);
                     break;
                 case MULTICHOICE:
                     quiz.isPassed = multiChoice(answerRegex, quiz.key);
@@ -41,12 +41,8 @@ public class QuizVerifier {
         return quizVerifiableAnswers;
     }
 
-    public Boolean oneChoice(String quizUserAnswer, String quizKey){
-        if (quizKey.compareToIgnoreCase(quizUserAnswer) == 0){
-            return true;
-        } else {
-            return false;
-        }
+    public Boolean isSingleAnswerChoice(String quizUserAnswer, String quizKey){
+        return quizKey.equalsIgnoreCase(quizUserAnswer);
     }
     public Boolean multiChoice(String quizUserAnswer, String quizKey) {
         int cntAnswer;
