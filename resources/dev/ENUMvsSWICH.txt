@@ -1,0 +1,7 @@
+http://francisoud.blogspot.com/2008/02/better-way-to-use-java-enum-than-switch.html
+[19.06.2014 6:18:16] Alex Gandzha: http://schneide.wordpress.com/2010/12/13/avoid-switch-use-enum/
+
+Person[] persons = gson.getObject(str, Person[].class)
+[5:55:47] Alex Gandzha: ShopListItem[] listItems = gson.fromJson(itemsJson, ShopListItem[].class);
+[6:02:08] Alex Gandzha: QuestionType.values
+[6:03:22] Alex Gandzha: if MULTICHOICE.name().equals(someFieldName)  return MULTICHOICE

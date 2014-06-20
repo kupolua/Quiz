@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * Created by pavelkulakovsky on 16.06.14.
+ * Created by pavelkulakovsky on 16.06.14
  */
 public class QuizResultWriter {
     QuizProperties quizProperties = new QuizProperties();
