@@ -1,4 +1,5 @@
 [   {
+<<<<<<< HEAD
         "title":"Компьютеры",
         "description":"Тест на знание компьютеров",
         "level": "Усложненный",
@@ -40,6 +41,58 @@
         "key":"*",
         "rating":2,
         "notifi":"В любом случае они существуют."
+=======
+        "question":"Компьютер это машина?",
+        "typeQuestion":"YESORNO",
+        "choice":"Y N",
+        "answer":"",
+        "key":"Y",
+        "isPassed":"false",
+        "rating":5,
+        "notify":"Компьютер это машина. см. Википедия"
+    },
+    {
+        "question":"Чтобы сварить кофе нужно использовать:",
+        "typeQuestion":"ONERIGHTANSWER",
+        "choice":"A) Копьютер B) Кофеварку C) Холодильник",
+        "answer":"",
+        "key":"B",
+        "isPassed":"false",
+        "rating":10,
+        "notify":"Естественно кофеварку. Можно и попросить кого-нибудь."
+    },
+    {
+        "question":"Компьютер включает в себя:",
+        "typeQuestion":"MULTICHOICE",
+        "choice":"A) Системный блок B) Кофеварку C) Мыльницу D) Клавиатуру E) Мышку",
+        "answer":"",
+        "key":"ADE",
+        "isPassed":"false",
+        "rating":7,
+        "notify":"Компьютер состоит из многих частей. Основные: системный блок, монитор, клавиатура, мышка."
+
+    },
+    {
+        "question":"Порядок включения компьютера",
+        "typeQuestion":"STRONGORDER",
+        "choice":"A) Включить монитор B) Включить системный блок C) Включить в розетку D) Ввести пароль",
+        "answer":"",
+        "key":"CBAD",
+        "isPassed":"false",
+        "rating":7,
+        "notify":"Без электричества компьютер работать не будет!"
+
+    },
+    {
+        "question":"Опишите как Вы относитесь к компьютерам?",
+        "typeQuestion":"WRITETEXT",
+        "choice":"Напишите одним предложением.",
+        "answer":"",
+        "key":"*",
+        "isPassed":"false",
+        "rating":2,
+        "notify":"В любом случае они существуют."
+>>>>>>> origin/master
     }
 ]
 

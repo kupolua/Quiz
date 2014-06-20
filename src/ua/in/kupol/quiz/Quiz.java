@@ -1,21 +1,16 @@
 package ua.in.kupol.quiz;
 
-import java.util.List;
+import ua.in.kupol.quiz.logic.QuizCreator;
 
 /**
  * Created by pavelkulakovsky on 16.06.14.
+ * Fixed 8 ToDo
  */
 public class Quiz {
     public static void main(String[] args) {
 
-        //todo Quiz.main() не должен содержать никакой логики. просто execute или runTest, etc
         QuizCreator quizCreator = new QuizCreator();
-        List<QuizQuestion> quizQuestions = quizCreator.quizGetQuestions();
+        quizCreator.quizCreate();
 
-        QuizPassing quizPassing = new QuizPassing();
-        List<QuizQuestion> quizAnswers = quizPassing.quizPassing(quizQuestions);
-
-        QuizVerification quizVerification = new QuizVerification();
-        quizVerification.quizVerification(quizAnswers);
     }
 }
