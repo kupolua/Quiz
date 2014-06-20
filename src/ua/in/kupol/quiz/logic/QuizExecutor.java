@@ -18,14 +18,14 @@ public class QuizExecutor {
         System.out.println(quizHead);
 
         for(QuizQuestion quiz : quizUserAnswers) {
-            System.out.println("\n" +quiz.question);
-            System.out.println(quiz.choice);
+            System.out.println("\n" +quiz.getQuestion());
+            System.out.println(quiz.getChoice());
             try {
                 System.out.print("Введите ответ: ");
                 BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
                 answer = bufferRead.readLine();
                 System.out.print("\nВаш ответ: " + answer + "\n");
-                quiz.answer = answer;
+                quiz.setAnswer(answer);
             } catch (IOException e) {
                 e.printStackTrace();
             }
