@@ -5,15 +5,16 @@ package ua.in.kupol.quiz.model;
  */
 public class QuizQuestion {
 
+    private QuizTypeQuesrion typeQuestion;
+
     private String question;
-    public QuizTypeQuesrion typeQuestion;
-    public String choice;
-    public String answer; //20.	не понятно зачем answer и key одновремено
+    private String choice;
+    private String answer; //20.	не понятно зачем answer и key одновремено
                           // field answer stores user answer. It's proof!
-    public String key;    // key stored right answer.
-    public boolean isPassed;
-    public int rating;
-    public String notify;
+    private String key;    // key stored right answer.
+    private boolean isPassed;
+    private int rating;
+    private String notify;
 
     public String getQuestion() {
         return question;
@@ -21,5 +22,61 @@ public class QuizQuestion {
 
     public void setQuestion(String question) {
         this.question = question;
+    }
+
+    public String getChoice() {
+        return choice;
+    }
+
+    public void setChoice(String choice) {
+        this.choice = choice;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public boolean isPassed() {
+        return isPassed;
+    }
+
+    public void setPassed(boolean isPassed) {
+        this.isPassed = isPassed;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public String getNotify() {
+        return notify;
+    }
+
+    public void setNotify(String notify) {
+        this.notify = notify;
+    }
+
+    public QuizTypeQuesrion getTypeQuestion() {
+        return typeQuestion;
+    }
+
+    public void setTypeQuestion(QuizTypeQuesrion typeQuestion) {
+        this.typeQuestion = typeQuestion;
     }
 }

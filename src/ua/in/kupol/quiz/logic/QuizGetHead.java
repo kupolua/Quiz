@@ -1,6 +1,6 @@
 package ua.in.kupol.quiz.logic;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import com.google.gson.Gson;
 import ua.in.kupol.quiz.model.QuizHead;
 
 import java.io.BufferedReader;
@@ -13,18 +13,17 @@ import java.io.IOException;
  */
 public class QuizGetHead {
     public QuizHead quizGetHead(){
-        QuizResultWriter quizResultWriter = new QuizResultWriter();
-        quizResultWriter.quizInfoRemover();
+
+        Gson gson = new Gson();
         QuizProperties quizProperties = new QuizProperties();
 
         BufferedReader quizHeadFile = null;
 
         QuizHead quizHeadObjects = null;
         try {
-            File quizQuestion = new File(quizProperties.getHeadLocation());
-            quizHeadFile = new BufferedReader(new FileReader(quizQuestion));
-            ObjectMapper mapper = new ObjectMapper();
-            quizHeadObjects = mapper.readValue(quizHeadFile, QuizHead.class);
+            File quizHead = new File(quizProperties.getHeadLocation());
+            quizHeadFile = new BufferedReader(new FileReader(quizHead));
+            quizHeadObjects = gson.fromJson(quizHeadFile, QuizHead.class);
         } catch (IOException e) {
             e.printStackTrace();
         } finally{
@@ -41,11 +40,9 @@ public class QuizGetHead {
     public String quizGetPrintHead(){
 
         return "\n======================================"
-                + "\nНазвание теста: " + quizGetHead().title
-                + "\nОписание: " + quizGetHead().description
-                + "\nУровень сложности: " + quizGetHead().level
+                + "\nНазвание теста: " + quizGetHead().getTitle()
+                + "\nОписание: " + quizGetHead().getDescription()
+                + "\nУровень сложности: " + quizGetHead().getLevelLogging()
                 + "\n======================================\n";
-
     }
-
 }

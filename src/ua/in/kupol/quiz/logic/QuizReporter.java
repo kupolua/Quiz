@@ -20,10 +20,10 @@ public class QuizReporter {
 
         for(QuizQuestion quiz: quizPrintable) {
             quizMaxCountQuestions++;
-            quizMaxRating += quiz.rating;
-            if (quiz.isPassed){
+            quizMaxRating += quiz.getRating();
+            if (quiz.isPassed()){
                 quizPassedQuestions++;
-                quizRating += quiz.rating;
+                quizRating += quiz.getRating();
                 toRemove.add(quiz);
             }
         }
@@ -42,7 +42,7 @@ public class QuizReporter {
             System.out.println("\nНеобходимо пройти тест заново.\n");
             for(QuizQuestion quiz: quizPrintable) {
 
-                switch (quizGetHead.quizGetHead().level) {
+                switch (quizGetHead.quizGetHead().getLevelLogging()) {
                     case HARD:
                         System.out.println(quizPrintHardLevel());
                         ;
@@ -75,21 +75,21 @@ public class QuizReporter {
     private String quizPrintMiddleLevel(QuizQuestion quiz) {
         String quizPrintMiddleLevel = "";
             quizPrintMiddleLevel += quizPrintHardLevel()
-                    + "\nВы не верно ответили на вопрос: " + quiz.guestion
-                    + "\nВарианты ответа: " + quiz.choice
-                    + "\nВаш ответ: " + quiz.answer;
+                    + "\nВы не верно ответили на вопрос: " + quiz.getQuestion()
+                    + "\nВарианты ответа: " + quiz.getChoice()
+                    + "\nВаш ответ: " + quiz.getAnswer();
         return  quizPrintMiddleLevel;
     }
     private String quizPrintLightLevel(QuizQuestion quiz) {
         String quizPrintLightLevel = "";
-            quizPrintLightLevel += quizPrintMiddleLevel(quiz) + "\nВы потеряли : " + quiz.rating + " баллов.";
+            quizPrintLightLevel += quizPrintMiddleLevel(quiz) + "\nВы потеряли : " + quiz.getRating() + " баллов.";
         return  quizPrintLightLevel;
     }
     private String quizPrintDeteiledLevel(QuizQuestion quiz) {
         String quizPrintDeteiledLevel = "";
             quizPrintDeteiledLevel += quizPrintLightLevel(quiz)
-                    + "\nПравильный ответ: " + quiz.key
-                    + "\nПримечание : " + quiz.notify;
+                    + "\nПравильный ответ: " + quiz.getKey()
+                    + "\nПримечание : " + quiz.getNotify();
         return  quizPrintDeteiledLevel;
     }
 
