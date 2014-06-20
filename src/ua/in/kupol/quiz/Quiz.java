@@ -9,6 +9,7 @@ import ua.in.kupol.quiz.logic.QuizCreator;
  */
 public class Quiz {
     public static void main(String[] args) {
+        
         QuizCreator quizCreator = new QuizCreator();
         quizCreator.quizCreate();
     }
