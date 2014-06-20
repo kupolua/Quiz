@@ -45,7 +45,7 @@
         "typeQuestion":"WRITETEXT",
         "choice":"Напишите одним предложением.",
         "answer":"",
-        "key":"*",
+        "key":"any",
         "isPassed":"false",
         "rating":2,
         "notify":"В любом случае они существуют."
