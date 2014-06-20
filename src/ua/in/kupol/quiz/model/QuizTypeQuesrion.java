@@ -14,6 +14,7 @@ public enum QuizTypeQuesrion {
         public Boolean compareAnswerAndKey(String quizUserAnswer, String quizKey){
             return quizKey.equalsIgnoreCase(quizUserAnswer);
         }
+
     }, MULTICHOICE {
         @Override
         public Boolean compareAnswerAndKey(String quizUserAnswer, String quizKey){
