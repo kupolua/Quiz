@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * Created by pavelkulakovsky on 16.06.14.
+ *
  */
 public class QuizVerifier {
 

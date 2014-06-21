@@ -6,7 +6,7 @@ package ua.in.kupol.quiz.model;
 public class QuizHead {
     private String title;
     private String description;
-    private QuizTypeLevel levelLogging;
+    private QuizTypeLevelLoggin levelLogging;
 
     public String getTitle() {
         return title;
@@ -24,11 +24,11 @@ public class QuizHead {
         this.description = description;
     }
 
-    public QuizTypeLevel getLevelLogging() {
+    public QuizTypeLevelLoggin getLevelLogging() {
         return levelLogging;
     }
 
-    public void setLevelLogging(QuizTypeLevel levelLogging) {
+    public void setLevelLogging(QuizTypeLevelLoggin levelLogging) {
         this.levelLogging = levelLogging;
     }
 }
