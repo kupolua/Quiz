@@ -22,22 +22,20 @@ public class QuizExecutor {
     public List quizExecut(String quizHead, List<QuizQuestion> quizGetQuestions){
         List<QuizQuestion> quizUserAnswers = quizGetQuestions;
         String answer = "";
-        System.out.println(quizHead);
+        logger.info(quizHead);
 
         for(QuizQuestion quiz : quizUserAnswers) {
-            System.out.println("\n" + quiz.getQuestion());
             logger.info("\n" + quiz.getQuestion());
-            System.out.println(quiz.getChoice());
             logger.info(quiz.getChoice());
             try {
-                System.out.print("Введите ответ: ");
+                logger.info("Введите ответ: ");
                 BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
                 answer = bufferRead.readLine();
-                System.out.print("\nВаш ответ: " + answer + "\n");
-                logger.info("\nВаш ответ: " + answer + "\n");
+                logger.info("Ваш ответ: " + answer + "\n");
                 quiz.setAnswer(answer);
             } catch (IOException e) {
-                e.printStackTrace();
+                logger.error("No console!", e);
+//                e.printStackTrace();
             }
         }
         logger.info("Finish dialogue with user");

@@ -1,5 +1,6 @@
 package ua.in.kupol.quiz.logic;
 
+import org.apache.log4j.Logger;
 import ua.in.kupol.quiz.model.QuizQuestion;
 
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.util.List;
  * Created by pavelkulakovsky on 17.06.14.
  */
 public class QuizReporter {
+    Logger logger = Logger.getLogger(QuizGetTypeLevelLoggin.class);
 
     public void quizPrintReport(List<QuizQuestion> quizVerifiedAnswers){
         List<QuizQuestion> quizPrintable = quizVerifiedAnswers;
@@ -31,18 +33,17 @@ public class QuizReporter {
 
         QuizGetHead quizGetHead = new QuizGetHead();
 
-        System.out.print("\n\n\n         Результаты Вашего теста        \n");
-        System.out.println(quizGetHead.quizGetPrintHead());
-        System.out.print("\nВы набрали: " + quizRating + " из " + quizMaxRating + " баллов.");
-        System.out.print("\nВы правильно ответили на " + quizPassedQuestions + " из " + quizMaxCountQuestions + " вопросов.\n\n");
+        logger.info("\n\n\n         Результаты Вашего теста        \n");
+        logger.info(quizGetHead.quizGetPrintHead());
+        logger.info("\nВы набрали: " + quizRating + " из " + quizMaxRating + " баллов.");
+        logger.info("\nВы правильно ответили на " + quizPassedQuestions + " из " + quizMaxCountQuestions + " вопросов.\n\n");
 
         if (quizRating == quizMaxRating) {
-            System.out.println("\nВы успешно прошли тест! Поздравляем!");
+            logger.info("\nВы успешно прошли тест! Поздравляем!");
         } else {
-            System.out.println("\nНеобходимо пройти тест заново.\n");
+            logger.info("\nНеобходимо пройти тест заново.\n");
             for(QuizQuestion quiz: quizPrintable) {
-
-                System.out.println(quizGetHead.quizGetHead().getLevelLogging().quizGetTypeLevelLoggin(quiz));
+                logger.info(quizGetHead.quizGetHead().getLevelLogging().quizGetTypeLevelLoggin(quiz));
             }
         }
     }

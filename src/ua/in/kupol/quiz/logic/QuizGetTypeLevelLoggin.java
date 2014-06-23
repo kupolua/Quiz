@@ -13,23 +13,20 @@ public enum QuizGetTypeLevelLoggin {
         }
     }, MIDDLE{
         public String quizGetTypeLevelLoggin(QuizQuestion quizQuestion){
-            return  "\nНеобходимо пройти тест заново.\n"
-                    + "\nВы не верно ответили на вопрос: " + quizQuestion.getQuestion()
+            return  "\nВы не верно ответили на вопрос: " + quizQuestion.getQuestion()
                     + "\nВарианты ответа: " + quizQuestion.getChoice()
                     + "\nВаш ответ: " + quizQuestion.getAnswer();
         }
     }, LIGHT{
         public String quizGetTypeLevelLoggin(QuizQuestion quizQuestion){
-            return  "\nНеобходимо пройти тест заново.\n"
-                    + "\nВы не верно ответили на вопрос: " + quizQuestion.getQuestion()
+            return  "\nВы не верно ответили на вопрос: " + quizQuestion.getQuestion()
                     + "\nВарианты ответа: " + quizQuestion.getChoice()
                     + "\nВаш ответ: " + quizQuestion.getAnswer()
                     + "\nВы потеряли : " + quizQuestion.getRating() + " баллов.";
         }
     }, DETEILED{
         public String quizGetTypeLevelLoggin(QuizQuestion quizQuestion){
-            return  "\nНеобходимо пройти тест заново.\n"
-                    + "\nВы не верно ответили на вопрос: " + quizQuestion.getQuestion()
+            return  "\nВы не верно ответили на вопрос: " + quizQuestion.getQuestion()
                     + "\nВарианты ответа: " + quizQuestion.getChoice()
                     + "\nВаш ответ: " + quizQuestion.getAnswer()
                     + "\nВы потеряли : " + quizQuestion.getRating() + " баллов."
