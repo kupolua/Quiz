@@ -1,9 +1,8 @@
 package ua.in.kupol.quiz.logic;
 
-import ua.in.kupol.quiz.logger.QuizLogger;
+import org.apache.log4j.Logger;
 import ua.in.kupol.quiz.model.QuizQuestion;
 
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -12,8 +11,12 @@ import java.util.List;
 
 
 public class QuizCreator {
+    static Logger logger = Logger.getLogger(QuizCreator.class);
 
     public void quizCreate(){
+
+//        BasicConfigurator.configure();
+        logger.info("Create Quiz");
 
         QuizGetHead quizGetHead = new QuizGetHead();
 
@@ -21,12 +24,6 @@ public class QuizCreator {
         List<QuizQuestion> quizQuestions = quizGetQuestions.quizGetQuestions();
 
         QuizExecutor quizExecutor = new QuizExecutor();
-        try {
-            QuizLogger.setup();
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException("Problems with creating the log files");
-        }
         List<QuizQuestion> quizUserAnswers = quizExecutor.quizExecut(quizGetHead.quizGetPrintHead(), quizQuestions);
 
         QuizVerifier quizVerifier = new QuizVerifier();
@@ -34,7 +31,6 @@ public class QuizCreator {
 
         QuizReporter quizReporter = new QuizReporter();
         quizReporter.quizPrintReport(quizVerifiedAnswers);
-
     }
 
 }

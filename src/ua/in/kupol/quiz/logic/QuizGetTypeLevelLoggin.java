@@ -1,9 +1,11 @@
-package ua.in.kupol.quiz.model;
+package ua.in.kupol.quiz.logic;
+
+import ua.in.kupol.quiz.model.QuizQuestion;
 
 /**
  * Created by pavelkulakovsky on 17.06.14.
  */
-public enum QuizTypeLevelLoggin {
+public enum QuizGetTypeLevelLoggin {
     HARD{
         @Override
         public String quizGetTypeLevelLoggin(QuizQuestion quizQuestion){

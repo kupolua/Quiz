@@ -1,11 +1,13 @@
 package ua.in.kupol.quiz.model;
 
+import ua.in.kupol.quiz.logic.QuizGetTypeQuesrion;
+
 /**
  * Created by pavelkulakovsky on 16.06.14.
  */
 public class QuizQuestion {
 
-    private QuizTypeQuesrion typeQuestion;
+    private QuizGetTypeQuesrion typeQuestion;
 
     private String question;
     private String choice;
@@ -72,11 +74,11 @@ public class QuizQuestion {
         this.notify = notify;
     }
 
-    public QuizTypeQuesrion getTypeQuestion() {
+    public QuizGetTypeQuesrion getTypeQuestion() {
         return typeQuestion;
     }
 
-    public void setTypeQuestion(QuizTypeQuesrion typeQuestion) {
+    public void setTypeQuestion(QuizGetTypeQuesrion typeQuestion) {
         this.typeQuestion = typeQuestion;
     }
 }

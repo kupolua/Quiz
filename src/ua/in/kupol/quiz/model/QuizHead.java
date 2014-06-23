@@ -1,12 +1,14 @@
 package ua.in.kupol.quiz.model;
 
+import ua.in.kupol.quiz.logic.QuizGetTypeLevelLoggin;
+
 /**
  * Created by pavelkulakovsky on 17.06.14.
  */
 public class QuizHead {
     private String title;
     private String description;
-    private QuizTypeLevelLoggin levelLogging;
+    private QuizGetTypeLevelLoggin levelLogging;
 
     public String getTitle() {
         return title;
@@ -24,11 +26,11 @@ public class QuizHead {
         this.description = description;
     }
 
-    public QuizTypeLevelLoggin getLevelLogging() {
+    public QuizGetTypeLevelLoggin getLevelLogging() {
         return levelLogging;
     }
 
-    public void setLevelLogging(QuizTypeLevelLoggin levelLogging) {
+    public void setLevelLogging(QuizGetTypeLevelLoggin levelLogging) {
         this.levelLogging = levelLogging;
     }
 }

@@ -1,9 +1,9 @@
-package ua.in.kupol.quiz.model;
+package ua.in.kupol.quiz.logic;
 
 /**
  * Created by pavelkulakovsky on 17.06.14.
  */
-public enum QuizTypeQuesrion {
+public enum QuizGetTypeQuesrion {
     YESORNO{
         @Override
         public Boolean compareAnswerAndKey(String quizUserAnswer, String quizKey){
