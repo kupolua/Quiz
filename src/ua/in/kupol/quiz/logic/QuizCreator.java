@@ -15,7 +15,6 @@ public class QuizCreator {
 
     public void quizCreate(){
 
-//        BasicConfigurator.configure();
         logger.info("Create Quiz");
 
         QuizGetHead quizGetHead = new QuizGetHead();

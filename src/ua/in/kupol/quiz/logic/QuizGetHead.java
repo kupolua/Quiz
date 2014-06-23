@@ -30,14 +30,12 @@ public class QuizGetHead {
             quizHeadObjects = gson.fromJson(quizHeadFile, QuizHead.class);
         } catch (IOException e) {
             logger.error("Can't open file", e);
-//            e.printStackTrace();
         } finally{
             if(quizHeadFile!=null){
                 try {
                     quizHeadFile.close();
                 } catch (IOException eQuizHeadFile) {
                     logger.error(eQuizHeadFile);
-//                    eQuizHeadFile.printStackTrace();
                 }
             }
         }
