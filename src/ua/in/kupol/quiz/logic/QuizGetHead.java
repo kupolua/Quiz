@@ -10,8 +10,11 @@ import java.io.IOException;
 
 /**
  * Created by pavelkulakovsky on 17.06.14.
+ *
  */
 public class QuizGetHead {
+
+
     public QuizHead quizGetHead(){
 
         Gson gson = new Gson();

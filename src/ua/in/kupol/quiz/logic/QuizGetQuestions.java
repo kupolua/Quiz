@@ -43,34 +43,6 @@ public class QuizGetQuestions {
                 }
             }
         }
-
-
         return quizQuestionsObjects;
     }
-//    public List quizGetQuestions(){
-//        QuizResultWriter quizResultWriter = new QuizResultWriter();
-//        quizResultWriter.quizInfoRemover();
-//        QuizProperties quizProperties = new QuizProperties();
-//
-//        BufferedReader quizQuestionsFile = null;
-//        List<QuizQuestion> quizQuestionsObjects = Collections.emptyList();
-//        try {
-//            File quizQuestion = new File(quizProperties.getQuestionLocation());
-//            quizQuestionsFile = new BufferedReader(new FileReader(quizQuestion));
-//            ObjectMapper mapper = new ObjectMapper();
-//            quizQuestionsObjects = mapper.readValue(quizQuestionsFile, new TypeReference<List<QuizQuestion>>(){});
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }finally{
-//            if(quizQuestionsFile!=null){
-//                try {
-//                    quizQuestionsFile.close();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-//        return quizQuestionsObjects;
-//    }
-
 }

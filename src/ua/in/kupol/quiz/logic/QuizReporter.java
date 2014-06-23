@@ -43,57 +43,7 @@ public class QuizReporter {
             for(QuizQuestion quiz: quizPrintable) {
 
                 System.out.println(quizGetHead.quizGetHead().getLevelLogging().quizGetTypeLevelLoggin(quiz));
-//                switch (quizGetHead.quizGetHead().getLevelLogging()) {
-//                    case HARD:
-//                        System.out.println(quizPrintHardLevel());
-//                        ;
-//                        break;
-//                    case MIDDLE:
-//                        System.out.println(quizPrintMiddleLevel(quiz));
-//                        ;
-//                        break;
-//                    case LIGHT:
-//                        System.out.println(quizPrintLightLevel(quiz));
-//                        ;
-//                        break;
-//                    case DETEILED:
-//                        System.out.println(quizPrintDeteiledLevel(quiz));
-//                        ;
-//                        break;
-//                    default:
-//                        System.out.println("No answer!");
-//                        break;
-//                }
             }
         }
     }
-
-
-//    public String quizPrintHardLevel(){
-//
-//        return "";
-//    }
-//    private String quizPrintMiddleLevel(QuizQuestion quiz) {
-//        String quizPrintMiddleLevel = "";
-//            quizPrintMiddleLevel += quizPrintHardLevel()
-//                    + "\nВы не верно ответили на вопрос: " + quiz.getQuestion()
-//                    + "\nВарианты ответа: " + quiz.getChoice()
-//                    + "\nВаш ответ: " + quiz.getAnswer();
-//        return  quizPrintMiddleLevel;
-//    }
-//    private String quizPrintLightLevel(QuizQuestion quiz) {
-//        String quizPrintLightLevel = "";
-//            quizPrintLightLevel += quizPrintMiddleLevel(quiz)
-//                    + "\nВы потеряли : " + quiz.getRating() + " баллов.";
-//        return  quizPrintLightLevel;
-//    }
-//    private String quizPrintDeteiledLevel(QuizQuestion quiz) {
-//        String quizPrintDeteiledLevel = "";
-//            quizPrintDeteiledLevel += quizPrintLightLevel(quiz)
-//                    + "\nПравильный ответ: " + quiz.getKey()
-//                    + "\nПримечание : " + quiz.getNotify();
-//        return  quizPrintDeteiledLevel;
-//    }
-
-
 }

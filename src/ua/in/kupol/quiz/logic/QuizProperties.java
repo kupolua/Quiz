@@ -46,10 +46,13 @@ public class QuizProperties {
     public String getFileWriteLocation() {
         return quizProperties.getProperty("pathToUserResultFile") + quizProperties.getProperty("userResultFile");
     }
+    public String getLogsHTMLFileLocation() {
+        return quizProperties.getProperty("pathToLogsFile") + quizProperties.getProperty("logsHTNLFileName");
+    }
+    public String getLogsTXTFileLocation() {
+        return quizProperties.getProperty("pathToLogsFile") + quizProperties.getProperty("logsTXTFileName");
+    }
     public String getRegexMask() {
         return quizProperties.getProperty("regexMask");
     }
-
-
-
 }
